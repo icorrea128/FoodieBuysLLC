@@ -1,0 +1,29 @@
+.HeaderRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:100px;
+}
+
+.HomePaleteros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.Home {
+    margin-right:10px;
+}
+
+.LoginLogout {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    
+}
+
+.Login {
+    margin-left:250px;
+    margin-right: 10px;
+}

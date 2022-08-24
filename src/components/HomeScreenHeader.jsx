@@ -6,11 +6,26 @@ function HomeScreenHeader(props) {
 
     let navigate = useNavigate();
     
-    const homeNavigation = () => {
-        navigate("/home");
-    }
-    const loginNavigation = () => {
-        navigate("/login");
+
+    const navigation = (urlDestination) => {
+        switch (urlDestination){
+            case "Home":
+                console.log("Home Clicked")
+                navigate("/home");
+                break;
+            case "Login":
+                navigate("/login");   
+                break;
+            case "FoodieBuys":
+                navigate("/foodiebuys");
+                break;
+            case "ContactUs":
+                navigate("/contactus");
+                break;
+            default:
+                navigate("/")
+                break;
+        }
     }
 
     return (
@@ -18,10 +33,10 @@ function HomeScreenHeader(props) {
             <div className="row HeaderRow">
                 <div className="col-md-4 HomePaleteros">
                     <div className="Home">
-                        <button className="btn btn-primary" onClick={homeNavigation}> Home</button>
+                        <button className="btn btn-primary" onClick={() => navigation("Home")}> Home</button>
                     </div>
                     <div className="Paleteros">
-                        <button className="btn btn-primary" >Foodie Buys</button>
+                        <button className="btn btn-primary" onClick={() => navigation("FoodieBuys")}>Foodie Buys</button>
                     </div>
                 </div>
                 <div className="col-md-4 Paleteros">
@@ -29,10 +44,10 @@ function HomeScreenHeader(props) {
                 </div>
                 <div className="col-md-4 LoginLogout">
                     <div className="Login">
-                        <button className="btn btn-primary" onClick={loginNavigation}>Login</button>
+                        <button className="btn btn-primary" onClick={() => navigation("Login")}>Login</button>
                     </div>
                     <div className="Logout">
-                        <button className="btn btn-primary" >Logout</button>
+                        <button className="btn btn-primary" onClick={() => navigation("ContactUs")}>Contact Us</button>
                     </div>
                 </div>
             </div>

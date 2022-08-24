@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from "react-dom";
+import HomeScreenHeader from './HomeScreenHeader'
 
 import LoginStyles from '../css/LoginStyles.css'
 
@@ -76,12 +77,15 @@ function Login(props) {
   );
 
   return (
+    <React.Fragment>
+    <HomeScreenHeader></HomeScreenHeader>
     <div className="app">
       <div className="login-form">
-        <div className="title">Sign In</div>
+        <div className="title">Foodie Buys</div>
         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
       </div>
     </div>
+    </React.Fragment>
   );
 }
 
